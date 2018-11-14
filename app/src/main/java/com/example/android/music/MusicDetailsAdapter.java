@@ -14,7 +14,6 @@ public class MusicDetailsAdapter extends ArrayAdapter<MusicDetails> {
     public MusicDetailsAdapter(Activity context, ArrayList<MusicDetails> Music) {
         super(context, 0, Music);
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -22,15 +21,11 @@ public class MusicDetailsAdapter extends ArrayAdapter<MusicDetails> {
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
-
         MusicDetails local_word = getItem(position);
-
         TextView songTextView = (TextView) listItemView.findViewById(R.id.song_text_view);
         songTextView.setText(local_word.getSongName());
-
         TextView artistTextView = (TextView) listItemView.findViewById(R.id.artist_text_view);
         artistTextView.setText(local_word.getArtistName());
-
         return listItemView;
     }
 }
